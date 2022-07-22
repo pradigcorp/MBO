@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
-from .models import GOAL22,FIG
+from .models import GOAL22
 from .forms import GOAL22Q1Form
 import os
 
@@ -39,11 +39,7 @@ def login(request):
         return render(request, 'MBO/login.html')
 
 def sample(request,num):
-
-    params = {
-        "foto" : FIG.objects.all(),
-        }
-    return render(request, 'MBO/sample.html', params)
+    return render(request, 'MBO/sample.html')
 
 def GOAL(request,num):
     params = {

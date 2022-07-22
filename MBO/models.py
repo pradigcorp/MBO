@@ -5,12 +5,6 @@ from django import forms
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-class FIG(models.Model):
-
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    logo = models.ImageField(blank=True)
-
 
 class GOAL22(models.Model):
 
