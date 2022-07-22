@@ -1,0 +1,23 @@
+{% load static %}
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="{% static 'css/MBO.css' %}">
+
+<img src="/static/abc.jpg" class="logo"><div class="first">人事システム</div>
+</head>
+{% if user.is_authenticated %}
+   <body>
+      <form action="{% url 'sample' user.id %}" method="post">
+      {% csrf_token %}
+      <div class="content">
+         <h3>目標設定・レビュー</h3>
+         <div style="float:left;" class="box"><a href="{% url 'GOAL' user.id %}">2022年度</a></div>
+         <div style="float:left;" class="box">2023年度</div>
+      </div>
+   </body>
+{% else %}
+   アクセスをお持ちでありません
+{% endif %}
+</html>

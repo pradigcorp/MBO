@@ -1,14 +1,46 @@
 {% load static %}
 <html lang="ja" dir="ltr">
-<head>
-<meta charset="utf-8">
-<title></title>
-<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <head>
+        <meta charset="utf-8">
 
-</head>
-<body>
-    <h1><font color="red">all employee status</font></h1>
-    {{form}}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 
-</body>
+
+        <title>人事制度のウェブプラットフォーム化</title>
+        <a href="https://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page"></a>
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/MBO.css' %}">
+    </head>
+    <body> 
+        <div class="page-header">
+            <h1><a>シンプル・実用的な人事機能のウェブプラットフォームを</a></h1>
+            <h1><a>カスタムメイド・低価格でご提供差し上げます。</a></h1>
+        </div>
+        <img src="static/meta3.jpeg" class="sample">        
+        <div class="content">目標管理制度、コンピテンシー評価、研修参加及びその報告などの人事制度をエクセル、メール、ワードなどマニュアルで行っており、これをウェブ管理へ移行したい貴社へ</div>
+        <div class="content">そのプラットフォームをご提供差し上げます。下のリンクで弊社製品例として目標管理とコンピテンシー評価の人事制度ウェブプラットフォームをご覧になれます。</div>
+        <br>
+        <div class="content">弊社の製品コンセプトはシンプル、カスタムメイド、実用的、低コスト。</div>
+        <div class="content">随時プラットフォームフォーマットの変更や新規機能追加にもご対応差し上げます。</div>
+        <div class="content">初期投資費用はゼロで貴社のコストは月額2万円のみ、随時解約可能。</div>
+        <div class="content">人事以外の分野も対応可能ですのでご相談下さい。</div>
+        <br>
+        <div class="content">ご興味を持たれましたら一度以下までご連絡下さい。</div>
+        <br>
+        <div class="content"><a href="mailto:hyuma17@yahoo.co.jp">hyuma17@yahoo.co.jp</a></div>
+        <br>
+        <div class="content"><a href="{% url 'login' %}">弊社製品例</a></div>
+        <br>          
+    
+    </body>
+    <footer>
+        <link rel="stylesheet" href="{% static 'css/MBO.css' %}">
+        <div class="footer">
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy;(株)プラクティカルウェブ（仮）</h1>
+        </div>
+    </footer>
+
 </html>
