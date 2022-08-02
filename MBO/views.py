@@ -11,9 +11,9 @@ from django.shortcuts import redirect
 from .models import GOAL22,CPA22
 from .forms import GOAL22Q1Form,CPA22CForm,CPA22AForm
 import os
-import xlwt
-import xlrd
-from xlutils.copy import copy
+#import xlwt
+#import xlrd
+#from xlutils.copy import copy
 import xlsxwriter
 import io
 import openpyxl as op
