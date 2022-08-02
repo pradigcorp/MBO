@@ -1,0 +1,92 @@
+{% load static %}
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/MBO.css' %}">   
+</head>
+<body class="container">  
+    {% if user.is_authenticated %}
+        <form action="{% url 'edit' user.id %}" method="post">
+            <p class="middle"><font color="blue">{{FN}}{{LN}}</font>さんの目標設定・レビュー</p>
+            {% csrf_token %}
+            <table border="1" cellspacing="0">
+                <tr style="background-color: #F0F8FF;">
+                    <td style="width: 240px;"><font size="2">期初目標設定</font></td>
+                    <td style="width: 70px;"><font size="2">ウェイト%</font></td>
+                    <td style="width: 240px;"><font size="2">期中レビュー</font></td>
+                    <td style="width: 240px;"><font size="2">期末レビュー</font></td>
+                    <td style="width: 60px;"><font size="2">評価点数</font></td>
+                    <td style="width: 240px;"><font size="2">評定者コメント</font></td>
+            </tr>
+                <tr class="edit">
+                    <td class="edit"><font size="2">{{data1.GOAL22A1}}</font></td>
+                    <td><font size="2">{{data1.GOAL22AP}}</font></td>
+                    <td><font size="2">{{data2.0}}</font></td>
+                    <td><font size="2">{{data3.0}}</font></td>
+                    <td><font size="2">{{data4.0}}</font></td>
+                    <td><font size="2">{{data5.0}}</font></td>
+                </tr>
+                <tr>
+                    <td><font size="2">{{data1.GOAL22B1}}</font></td>
+                    <td><font size="2">{{data1.GOAL22BP}}</font></td>
+                    <td><font size="2">{{data2.1}}</font></td>
+                    <td><font size="2">{{data3.1}}</font></td>
+                    <td><font size="2">{{data4.1}}</font></td>
+                    <td><font size="2">{{data5.1}}</font></td>
+                </tr>                    
+                <tr>
+                    <td><font size="2">{{data1.GOAL22C1}}</font></td>
+                    <td><font size="2">{{data1.GOAL22CP}}</font></td>
+                    <td><font size="2">{{data2.2}}</font></td>
+                    <td><font size="2">{{data3.2}}</font></td>
+                    <td><font size="2">{{data4.2}}</font></td>
+                    <td><font size="2">{{data5.2}}</font></td>
+                </tr>                    
+                <tr>
+                    <td><font size="2">{{data1.GOAL22D1}}</font></td>
+                    <td><font size="2">{{data1.GOAL22DP}}</font></td>
+                    <td><font size="2">{{data2.3}}</font></td>
+                    <td><font size="2">{{data3.3}}</font></td>
+                    <td><font size="2">{{data4.3}}</font></td>
+                    <td><font size="2">{{data5.3}}</font></td>
+                </tr>                    
+                <tr>
+                    <td><font size="2">{{data1.GOAL22E1}}</font></td>
+                    <td><font size="2">{{data1.GOAL22EP}}</font></td>
+                    <td><font size="2">{{data2.4}}</font></td>
+                    <td><font size="2">{{data3.4}}</font></td>
+                    <td><font size="2">{{data4.4}}</font></td>
+                    <td><font size="2">{{data5.4}}</font></td>
+                </tr>                    
+                <tr>
+                    <td><font size="2">{{data1.GOAL22F1}}</font></td>
+                    <td><font size="2">{{data1.GOAL22FP}}</font></td>
+                    <td><font size="2">{{data2.5}}</font></td>
+                    <td><font size="2">{{data3.5}}</font></td>
+                    <td><font size="2">{{data4.5}}</font></td>
+                    <td><font size="2">{{data5.5}}</font></td>
+                </tr>                    
+                <tr>
+                    <td><font size="2">{{data1.GOAL22G1}}</font></td>
+                    <td><font size="2">{{data1.GOAL22GP}}</font></td>
+                    <td><font size="2">{{data2.6}}</font></td>
+                    <td><font size="2">{{data3.6}}</font></td>
+                    <td><font size="2">{{data4.6}}</font></td>
+                    <td><font size="2">{{data5.6}}</font></td>
+                </tr>                    
+            </table>
+            <br><tr><th><td>
+                <input type="submit" value="保存/戻る" class="button">
+            </td></th></tr>   
+        </form>
+    
+    {% else %}
+    アクセスをお持ちでありません
+    {% endif %}
+</body>
+</html>
