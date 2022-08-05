@@ -14,7 +14,7 @@ import os
 #import xlwt
 #import xlrd
 #from xlutils.copy import copy
-import xlsxwriter
+import XlsxWriter
 import io
 import openpyxl as op
 
@@ -326,7 +326,7 @@ def GOAL(request):
         if "DL" in request.POST:
             output = io.BytesIO()
             book = op.Workbook(output)
-            book = xlsxwriter.Workbook(output)
+            book = XlsxWriter.Workbook(output)
             ws = book.add_worksheet('goalsetting')
             format = book.add_format({'border':1})
             format.set_text_wrap()         
@@ -440,7 +440,7 @@ def GOAL2(request, name):
         if "DL" in request.POST:
             output = io.BytesIO()
             book = op.Workbook(output)
-            book = xlsxwriter.Workbook(output)
+            book = XlsxWriter.Workbook(output)
             ws = book.add_worksheet('goalsetting')
             format = book.add_format({'border':1})          
             ws.write(1,1,'期初目標設定', format)
@@ -536,7 +536,7 @@ def GOAL3(request):
         if "DL" in request.POST:
             output = io.BytesIO()
             book = op.Workbook(output)
-            book = xlsxwriter.Workbook(output)
+            book = XlsxWriter.Workbook(output)
             ws = book.add_worksheet('goalsetting')
             format = book.add_format({'border':1})
             format.set_text_wrap()         
@@ -630,7 +630,7 @@ def CPA(request):
         if "DL" in request.POST:
             output = io.BytesIO()
             book = op.Workbook(output)
-            book = xlsxwriter.Workbook(output)
+            book = XlsxWriter.Workbook(output)
             ws = book.add_worksheet('competency')
             format = book.add_format({'border':1})
             format.set_text_wrap()          
@@ -773,7 +773,7 @@ def CPA2(request,name):
         if "DL" in request.POST:
             output = io.BytesIO()
             book = op.Workbook(output)
-            book = xlsxwriter.Workbook(output)
+            book = XlsxWriter.Workbook(output)
             ws = book.add_worksheet('competency')
             format = book.add_format({'border':1})
             format.set_text_wrap()          
