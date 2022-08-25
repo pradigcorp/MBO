@@ -9,9 +9,8 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
 </head>
     <body class="container">  
         {% if user.is_authenticated %}
-            <form action="{% url 'CPA' %}" method="post">
-                <p class="middle"><font color="blue">{{FN}}{{LN}}</font>さんのコンピテンシー評価 
-                    {% if sbmt == 0 %}: 編集をクリックし本人評価と向上プランを記入し、評定者へ送信ボタンを押下して下さい。{% endif %}</p>                
+            <form action="{% url 'CPA3' name=EMP %}" method="post">
+                <p class="middle"><font color="blue">{{FN}}&nbsp;{{LN}}</font>さんのコンピテンシー評価 （評定者:<font color="blue">{{FN2}}&nbsp;{{LN2}}さん</font>）</p>                
                 {% csrf_token %}
                 <table border="1" cellspacing="0">
                     <tr style="background-color: #F0F8FF">
@@ -128,22 +127,11 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
                         </tr>
                     </tr>
                 </table>
-                {% if sbmt == 0 %}
-                    <td><a href="{% url 'editCPA' user.id %}"><font size="2">編集する</font></a></td>
-                    <br>
-                    <tr><th><td>
-                        <input type="submit" name="DL" value="ダウンロード" class="button3">
-                    </td></th></tr> 
-                    <tr><th><td>
-                        <input type="submit" name="send" value="評定者に送信" class="button">
-                    </td></th></tr>   
-                {% else %}
-                    <font size="2">評定者に送信済みです（デモ版では山田課長の評定者による承認プロセスはないのでこちらで完了です）</font><br>
-                    <tr><th><td>
-                        <input type="submit" name="DL" value="ダウンロード" class="button3">
-                    </td></th></tr> 
-                    {% endif %}
-                <br><td><a href="{% url 'sample' %}"><font size="2">人事システムホーム画面に戻る</font></a></td>       
+                <br>
+                <tr><th><td>
+                    <input type="submit" name="DL" value="ダウンロード" class="button3">
+                </td></th></tr> 
+                <br><td><a href="{% url 'GOAL3' %}"><font size="2">戻る</font></a></td>       
                 </form>
         {% else %}
         アクセスをお持ちでありません

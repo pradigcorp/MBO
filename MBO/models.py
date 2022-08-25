@@ -154,7 +154,13 @@ class GOAL22(models.Model):
         return self.user.username
 
 point_choices = ((1,'1'),(2,'2'),(3,'3'))
+time_choices = (('期初目標設定','期初目標設定'),('期中レビュー','期中レビュー'),('期末レビュー','期末レビュー'),)
 
+class RHDT(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    TIME = models.CharField(max_length=20,choices=time_choices, default='期初目標設定')
+    def __str__(self):
+        return self.user.username
 
 class CPA22(models.Model):
 

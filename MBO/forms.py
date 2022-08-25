@@ -1,5 +1,5 @@
 from django import forms
-from .models import GOAL22,CPA22
+from .models import GOAL22,CPA22,RHDT
 from django.core.exceptions import ValidationError
 from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate
@@ -35,13 +35,59 @@ class GOAL22Q2Form(forms.ModelForm):
         model = GOAL22
         fields = ('GOAL22A2','GOAL22B2','GOAL22C2','GOAL22D2','GOAL22E2','GOAL22F2','GOAL22G2')
         labels = {'GOAL22A2':"meta1",'GOAL22B2':"meta2",'GOAL22C2':"meta3",'GOAL22D2':"meta4",'GOAL22E2':"meta5",'GOAL22F2':"meta6",'GOAL22G2':"meta7"}
-        
+        widgets = {
+            'GOAL22A2':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22B2':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22C2':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22D2':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22E2':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22F2':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22G2':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            }
+
 class GOAL22Q3Form(forms.ModelForm):
 
     class Meta():
         model = GOAL22
-        fields = ('GOAL22A3','GOAL22B3','GOAL22C3','GOAL22D3','GOAL22E3','GOAL22F3','GOAL22G3')
-        labels = {'GOAL22A3':"meta1",'GOAL22B3':"meta2",'GOAL22C3':"meta3",'GOAL22D3':"meta4",'GOAL22E3':"meta5",'GOAL22F3':"meta6",'GOAL22G3':"meta7"}
+        fields = (
+            'GOAL22A3','GOAL22B3','GOAL22C3','GOAL22D3','GOAL22E3','GOAL22F3','GOAL22G3',
+        )
+#        labels = {'GOAL22A3':"meta1",'GOAL22B3':"meta2",'GOAL22C3':"meta3",'GOAL22D3':"meta4",'GOAL22E3':"meta5",'GOAL22F3':"meta6",'GOAL22G3':"meta7"}
+        widgets = {
+            'GOAL22A3':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22B3':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22C3':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22D3':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22E3':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22F3':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22G3':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            }
+
+
+class GOAL22Q3AForm(forms.ModelForm):
+
+    class Meta():
+        model = GOAL22
+        fields = (
+            'GOAL22AR','GOAL22BR','GOAL22CR','GOAL22DR','GOAL22ER','GOAL22FR','GOAL22GR',
+            'GOAL22AJ','GOAL22BJ','GOAL22CJ','GOAL22DJ','GOAL22EJ','GOAL22FJ','GOAL22GJ',
+        )
+        widgets = {
+            'GOAL22AR':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+            'GOAL22BR':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+            'GOAL22CR':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+            'GOAL22DR':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+            'GOAL22ER':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+            'GOAL22FR':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+            'GOAL22GR':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+            'GOAL22AJ':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22BJ':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22CJ':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22DJ':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22EJ':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22FJ':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            'GOAL22GJ':forms.Textarea(attrs={'rows':2, 'cols':33, 'style': 'border-color:white'}),
+            }
 
 
 class CPA22CForm(forms.ModelForm):
@@ -54,21 +100,36 @@ class CPA22CForm(forms.ModelForm):
             'CPA22A1P','CPA22A2P','CPA22A3P','CPA22B1P','CPA22B2P','CPA22B3P','CPA22C1P','CPA22C2P','CPA22C3P','CPA22D1P','CPA22D2P','CPA22D3P','CPA22E1P','CPA22E2P','CPA22E3P',
             )
         widgets = {
-            'CPA22A1C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22A2C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22A3C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22B1C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22B2C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22B3C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22C1C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22C2C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22C3C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22D1C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22D2C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22D3C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22E1C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22E2C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22E3C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+            'CPA22A1C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22A2C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22A3C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22B1C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22B2C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22B3C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22C1C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22C2C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22C3C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22D1C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22D2C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22D3C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22E1C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22E2C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22E3C':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+#            'CPA22A1C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22A2C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22A3C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22B1C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22B2C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22B3C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22C1C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22C2C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22C3C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22D1C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22D2C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22D3C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22E1C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22E2C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+#            'CPA22E3C':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
             'CPA22A1K':forms.Textarea(attrs={'rows':1, 'cols':56, 'style': 'border-color:white'}),
             'CPA22A2K':forms.Textarea(attrs={'rows':1, 'cols':56, 'style': 'border-color:white'}),
             'CPA22A3K':forms.Textarea(attrs={'rows':1, 'cols':56, 'style': 'border-color:white'}),
@@ -101,6 +162,11 @@ class CPA22CForm(forms.ModelForm):
             'CPA22E3P':forms.Textarea(attrs={'rows':1, 'cols':56, 'style': 'border-color:white'}),
             }
 
+class TIMEForm(forms.ModelForm):
+    class Meta():
+        model = RHDT
+        fields = ('TIME',)
+        widgets = {'TIME':forms.Select(attrs={'style': 'width:15ch; border-color:white; background-color:white'}),}
 
 class CPA22AForm(forms.ModelForm):
 
@@ -110,20 +176,20 @@ class CPA22AForm(forms.ModelForm):
             'CPA22A1A','CPA22A2A','CPA22A3A','CPA22B1A','CPA22B2A','CPA22B3A','CPA22C1A','CPA22C2A','CPA22C3A','CPA22D1A','CPA22D2A','CPA22D3A','CPA22E1A','CPA22E2A','CPA22E3A',
             )
         widgets = {
-            'CPA22A1A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22A2A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22A3A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22B1A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22B2A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22B3A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22C1A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22C2A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22C3A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22D1A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22D2A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22D3A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22E1A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22E2A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
-            'CPA22E3A':forms.NumberInput(attrs={'style': 'width:8ch; border-color:white'}),
+            'CPA22A1A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22A2A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22A3A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22B1A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22B2A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22B3A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22C1A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22C2A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22C3A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22D1A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22D2A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22D3A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22E1A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22E2A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
+            'CPA22E3A':forms.Select(attrs={'style': 'width:8ch; border-color:white; background-color:white'}),
             }
 

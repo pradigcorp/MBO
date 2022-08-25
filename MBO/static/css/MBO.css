@@ -50,6 +50,28 @@
     margin-right:20px; 
 }
 
+.box2 {
+    padding: 10px;
+    width: 80px;
+    height: 20px;
+    display: grid;
+    place-items:center;
+    margin-right:10px; 
+}
+
+.box3 {
+    margin-left: 350px;
+    margin-top: 7px;
+    position : absolute;
+}
+
+.box4 {
+    margin-left: 200px;
+    margin-top: 7px;
+    position : absolute;
+}
+
+
 .first {
     margin-top: 0;
     margin-left: 54px;
@@ -74,11 +96,12 @@
 
 .sample {
     position : relative;
-    top: 0%;
-    margin-left: 500px;
+    top: 30%;
+    margin-top: 70px;
+    margin-left: 540px;
     text-align: left;
     width: 800px;
-    height: 640px;
+    height: 500px;
 }
 
 .sample2 {
@@ -195,6 +218,7 @@ h1, h2, h3, h4 {
 }
 
 .tooltip2{
+    color: #0007FF;
     position: relative;
     cursor: pointer;
     display: inline-block;
@@ -212,7 +236,7 @@ h1, h2, h3, h4 {
     color: #fff;
     border-radius: 5px;
     background: #000;
-    width: 100px;
+    width: 300px;
 }
 .description2:before {
     content: "";
@@ -222,10 +246,10 @@ h1, h2, h3, h4 {
     border: 15px solid transparent;
     border-top: 15px solid #000;
     margin-left: -15px;
-    transform: rotateZ(90deg);
+    transform: rotateZ(0deg);
 }
 .tooltip2:hover .description2{
     display: inline-block;
     top: 0px;
-    left: 80px;
+    left: 40px;
 }

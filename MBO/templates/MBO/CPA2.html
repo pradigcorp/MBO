@@ -128,7 +128,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
                     </tr>
                 </table>
                 {% if sbmt == 0 %}
-                    <font color="blue">{{FN}}&nbsp;{{LN}}</font>さんの送信をお待ちください<br>
+                    <font color="blue">{{FN}}&nbsp;{{LN}}</font>さんの送信をお待ちください（デモ版では山田課長部下の被評定者メニューはありませんので差し戻しますと終了となります）<br>
                 {% endif %}
                 {% if sbmt == 1 %}
                     評定者評価を入力して下さい。また考察と向上プランを確認し承認か差し戻しボタンを押下して下さい。
@@ -146,7 +146,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
                     </td></th></tr>
                 {% endif %}
                 {% if sbmt == 2 %}
-                    <font size="2">承認済みです</font><br>
+                    <font size="2">承認済みです（デモ版では当年度のみですのでこちらで完了です）</font><br>
                     <tr><th><td>
                         <input type="submit" name="DL" value="ダウンロード" class="button3">
                     </td></th></tr> 

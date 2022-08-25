@@ -9,101 +9,156 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
 </head>
     <body class="container">  
         {% if user.is_authenticated %}
+        <p>人事メニュー　目標管理制度とコンピテンシー　全社員</p>
             <form action="{% url 'GOAL3' %}" method="post">
-                {% for i in data1 %}
-                    {{i.first_name}}{{i.last_name}}<br>
-                {% endfor %}
-                <p class="middle"><font color="blue">{{FN}}&nbsp;{{LN}}</font>さんの目標設定・レビュー （評定者:<font color="blue">{{FN2}}&nbsp;{{LN2}}さん</font>）</p>                
-                {% csrf_token %}
-                <table border="1" cellspacing="0">
-                    <tr style="background-color: #F0F8FF">
-                        <td style="width: 240px;"><font size="2">期初目標設定</font></td>
-                        <td><font size="2">ウェイト%</font></td>
-                        <td style="width: 240px;"><font size="2">期中レビュー</font></td>
-                        <td style="width: 240px;"><font size="2">期末レビュー</font></td>
-                        <td><font size="2">評価点数</font></td>
-                        <td style="width: 240px;"><font size="2">評定者コメント</font></td>
+                <table border="1">
+                    <tr>
+                        <td>氏名</td>
+                        <td>評定者</td>
+                        <td>期初目標設定完了日</td>
+                        <td>期中レビュー完了日</td>
+                        <td>期末レビュー完了日</td>
+                        <td>コンピテンシー評価<br>完了日</td>
+                        <td>目標設定レビュー</td>
+                        <td>コンピテンシー評価</td>
                     </tr>
                     <tr>
-                        <td><font size="2">{{data1.0}}</font></td>
-                        <td><font size="2">{% if data2.0 != 0 %}{{data2.0}}{% endif %}</font></td>
-                        <td><font size="2">{{data3.0}}</font></td>
-                        <td><font size="2">{{data4.0}}</font></td>
-                        <td style="height: 70px;"><font size="2">{% if data2.0 != 0 %}{{data5.0}}{% endif %}</font></td>
-                        <td><font size="2">{{data6.0}}</font></td>
+                        <td>{{data1.1}}</td>
+                        <td>〇〇部長</td>
+                        <td>{% if data2.0 == 0 %}未提出{% else %}{{data2.0}}/{{data2.1}}/{{data2.2}}{% endif %}</td>
+                        <td>{% if data2.3 == 0 %}未提出{% else %}{{data2.3}}/{{data2.4}}/{{data2.5}}{% endif %}</td>
+                        <td>{% if data2.6 == 0 %}未提出{% else %}{{data2.6}}/{{data2.7}}/{{data2.8}}{% endif %}</td>
+                        <td>{% if data12.0 == 0 %}未提出{% else %}{{data12.0}}/{{data12.1}}/{{data12.2}}{% endif %}</td>
+                        <td><a href="{% url 'GOAL4' name=LL.1 %}">見る</a></td>
+                        <td><a href="{% url 'CPA3' name=LL.1 %}">見る</a></td>
                     </tr>
                     <tr>
-                        <td><font size="2">{{data1.1}}</font></td>
-                        <td><font size="2">{% if data2.1 != 0 %}{{data2.1}}{% endif %}</font></td>
-                        <td><font size="2">{{data3.1}}</font></td>
-                        <td><font size="2">{{data4.1}}</font></td>
-                        <td style="height: 70px;"><font size="2">{% if data2.1 != 0 %}{{data5.1}}{% endif %}</font></td>
-                        <td><font size="2">{{data6.1}}</font></td>
-                    </tr>                    
-                    <tr>
-                        <td><font size="2">{{data1.2}}</font></td>
-                        <td><font size="2">{% if data2.2 != 0 %}{{data2.2}}{% endif %}</font></td>
-                        <td><font size="2">{{data3.2}}</font></td>
-                        <td><font size="2">{{data4.2}}</font></td>
-                        <td style="height: 70px;"><font size="2">{% if data2.2 != 0 %}{{data5.2}}{% endif %}</font></td>
-                        <td><font size="2">{{data6.2}}</font></td>
+                        <td>{{data1.2}}</td>
+                        <td>{{data1.1}}</td>
+                        <td>{% if data3.0 == 0 %}未提出{% else %}{{data3.0}}/{{data3.1}}/{{data3.2}}{% endif %}</td>
+                        <td>{% if data3.3 == 0 %}未提出{% else %}{{data3.3}}/{{data3.4}}/{{data3.5}}{% endif %}</td>
+                        <td>{% if data3.6 == 0 %}未提出{% else %}{{data3.6}}/{{data3.7}}/{{data3.8}}{% endif %}</td>
+                        <td>{% if data13.0 == 0 %}未提出{% else %}{{data13.0}}/{{data13.1}}/{{data13.2}}{% endif %}</td>
+                        <td><a href="{% url 'GOAL4' name=LL.2 %}">見る</a></td>
+                        <td><a href="{% url 'CPA3' name=LL.2 %}">見る</a></td>
                     </tr>
                     <tr>
-                        <td><font size="2">{{data1.3}}</font></td>
-                        <td><font size="2">{% if data2.3 != 0 %}{{data2.3}}{% endif %}</font></td>
-                        <td><font size="2">{{data3.3}}</font></td>
-                        <td><font size="2">{{data4.3}}</font></td>
-                        <td style="height: 70px;"><font size="2">{% if data2.3 != 0 %}{{data5.3}}{% endif %}</font></td>
-                        <td><font size="2">{{data6.3}}</font></td>
+                        <td>{{data1.3}}</td>
+                        <td>{{data1.1}}</td>
+                        <td>{% if data4.0 == 0 %}未提出{% else %}{{data4.0}}/{{data4.1}}/{{data4.2}}{% endif %}</td>
+                        <td>{% if data4.3 == 0 %}未提出{% else %}{{data4.3}}/{{data4.4}}/{{data4.5}}{% endif %}</td>
+                        <td>{% if data4.6 == 0 %}未提出{% else %}{{data4.6}}/{{data4.7}}/{{data4.8}}{% endif %}</td>
+                        <td>{% if data14.0 == 0 %}未提出{% else %}{{data14.0}}/{{data14.1}}/{{data14.2}}{% endif %}</td>
+                        <td><a href="{% url 'GOAL4' name=LL.3 %}">見る</a></td>
+                        <td><a href="{% url 'CPA3' name=LL.3 %}">見る</a></td>
                     </tr>
                     <tr>
-                        <td><font size="2">{{data1.4}}</font></td>
-                        <td><font size="2">{% if data2.4 != 0 %}{{data2.4}}{% endif %}</font></td>
-                        <td><font size="2">{{data3.4}}</font></td>
-                        <td><font size="2">{{data4.4}}</font></td>
-                        <td style="height: 70px;"><font size="2">{% if data2.4 != 0 %}{{data5.4}}{% endif %}</font></td>
-                        <td><font size="2">{{data6.4}}</font></td>
+                        <td>{{data1.4}}</td>
+                        <td>{{data1.1}}</td>
+                        <td>{% if data5.0 == 0 %}未提出{% else %}{{data5.0}}/{{data5.1}}/{{data5.2}}{% endif %}</td>
+                        <td>{% if data5.3 == 0 %}未提出{% else %}{{data5.3}}/{{data5.4}}/{{data5.5}}{% endif %}</td>
+                        <td>{% if data5.6 == 0 %}未提出{% else %}{{data5.6}}/{{data5.7}}/{{data5.8}}{% endif %}</td>
+                        <td>{% if data15.0 == 0 %}未提出{% else %}{{data15.0}}/{{data15.1}}/{{data15.2}}{% endif %}</td>
+                        <td><a href="{% url 'GOAL4' name=LL.4 %}">見る</a></td>
+                        <td><a href="{% url 'CPA3' name=LL.4 %}">見る</a></td>
                     </tr>
                     <tr>
-                        <td><font size="2">{{data1.5}}</font></td>
-                        <td><font size="2">{% if data2.5 != 0 %}{{data2.5}}{% endif %}</font></td>
-                        <td><font size="2">{{data3.5}}</font></td>
-                        <td><font size="2">{{data4.5}}</font></td>
-                        <td style="height: 70px;"><font size="2">{% if data2.5 != 0 %}{{data5.5}}{% endif %}</font></td>
-                        <td><font size="2">{{data6.5}}</font></td>
-                    <tr>
-                        <td><font size="2">{{data1.6}}</font></td>
-                        <td><font size="2">{% if data2.6 != 0 %}{{data2.6}}{% endif %}</font></td>
-                        <td><font size="2">{{data3.6}}</font></td>
-                        <td><font size="2">{{data4.6}}</font></td>
-                        <td style="height: 70px;"><font size="2">{% if data2.6 != 0 %}{{data5.6}}{% endif %}</font></td>
-                        <td><font size="2">{{data6.6}}</font></td>
+                        <td>{{data1.5}}</td>
+                        <td>{{data1.1}}</td>
+                        <td>{% if data6.0 == 0 %}未提出{% else %}{{data6.0}}/{{data6.1}}/{{data6.2}}{% endif %}</td>
+                        <td>{% if data6.3 == 0 %}未提出{% else %}{{data6.3}}/{{data6.4}}/{{data6.5}}{% endif %}</td>
+                        <td>{% if data6.6 == 0 %}未提出{% else %}{{data6.6}}/{{data6.7}}/{{data6.8}}{% endif %}</td>
+                        <td>{% if data16.0 == 0 %}未提出{% else %}{{data16.0}}/{{data16.1}}/{{data16.2}}{% endif %}</td>
+                        <td><a href="{% url 'GOAL4' name=LL.5 %}">見る</a></td>
+                        <td><a href="{% url 'CPA3' name=LL.5 %}">見る</a></td>
                     </tr>
                 </table>
-                {% if sbmt == 0 %}
-                    <font color="blue">{{FN}}&nbsp;{{LN}}</font>さんの送信をお待ちください<br>
-                {% endif %}
-                {% if sbmt == 1 %}
-                    目標・ウェイトを確認し承認か差し戻しボタンを押下して下さい。
-                    <br>
-                    <tr><th><td>
-                        <input type="submit" name="DL" value="ダウンロード" class="button3">
-                    </td></th></tr> 
-                    <tr><th><td>
-                        <input type="submit" name="send" value="承認" class="button">
-                    </td></th></tr>   
-                    <tr><th><td>
-                        <input type="submit" name="back" value="差し戻し" class="button4">
-                    </td></th></tr>
-                {% endif %}
-                {% if sbmt == 2 %}
-                    <font size="2">承認済みです</font><br>
-                    <tr><th><td>
-                        <input type="submit" name="DL" value="ダウンロード" class="button3">
-                    </td></th></tr> 
-                {% endif %}
+            <br>
+                <table border="1" cellspacing="0">
+                    <tr style="background-color: #F0F8FF">
+                        <td style="width: 100px;"><font size="2">コンピテンシー</font></td>
+                        <td style="width: 700px;"><font size="2">コンピテンシー詳細</font></td>
+                        <td style="width: 100px;"><font size="2">本人評価平均</font></td>
+                        <td style="width: 100px;"><font size="2">評定者評価平均</font></td>
+                    </tr>
+                    <tr>
+                        <tr><td rowspan="3"><font size="2">{{B1}}</font></td>
+                            <td><font size="2">{{B2}}</td>
+                            <td><font size="2">{{CA1}}</font></td>
+                            <td><font size="2">{{AA1}}</font></td>
+                        </tr>
+                        <tr><td><font size="2">{{B3}}</td>
+                            <td><font size="2">{{CA2}}</font></td>
+                            <td><font size="2">{{AA2}}</font></td>
+                        </tr>
+                        <tr><td><font size="2">{{B4}}</td>
+                            <td><font size="2">{{CA3}}</font></td>
+                            <td><font size="2">{{AA3}}</font></td>
+                        </tr>
+                    </tr>
+                    <tr>
+                        <tr><td rowspan="3"><font size="1">{{B5}}</font></td>
+                            <td><font size="2">{{B6}}</td>
+                            <td><font size="2">{{CB1}}</font></td>
+                            <td><font size="2">{{AB1}}</font></td>
+                        </tr>
+                        <tr><td><font size="2">{{B7}}</td>
+                            <td><font size="2">{{CB2}}</font></td>
+                            <td><font size="2">{{AB2}}</font></td>
+                        </tr>
+                        <tr><td><font size="2">{{B8}}</td>
+                            <td><font size="2">{{CB3}}</font></td>
+                            <td><font size="2">{{AB3}}</font></td>
+                        </tr>
+                    </tr>
+                    <tr>
+                        <tr><td rowspan="3"><font size="1">{{B9}}</font></td>
+                            <td><font size="2">{{B10}}</td>
+                            <td><font size="2">{{CC1}}</font></td>
+                            <td><font size="2">{{AC1}}</font></td>
+                        </tr>
+                        <tr><td><font size="2">{{B11}}</td>
+                            <td><font size="2">{{CC2}}</font></td>
+                            <td><font size="2">{{AC2}}</font></td>
+                        </tr>
+                        <tr><td><font size="2">{{B12}}</td>
+                            <td><font size="2">{{CC3}}</font></td>
+                            <td><font size="2">{{AC3}}</font></td>
+                        </tr>
+                    </tr>
+                    <tr>
+                        <tr><td rowspan="3"><font size="1">{{B13}}</font></td>
+                            <td><font size="2">{{B14}}</td>
+                            <td><font size="2">{{CD1}}</font></td>
+                            <td><font size="2">{{AD1}}</font></td>
+                        </tr>
+                        <tr><td><font size="2">{{B15}}</td>
+                            <td><font size="2">{{CD2}}</font></td>
+                            <td><font size="2">{{AD2}}</font></td>
+                        </tr>
+                        <tr><td><font size="2">{{B16}}</td>
+                            <td><font size="2">{{CD3}}</font></td>
+                            <td><font size="2">{{AD3}}</font></td>
+                        </tr>
+                    </tr>
+                    <tr>
+                        <tr><td rowspan="3"><font size="1">{{B17}}</font></td>
+                            <td><font size="2">{{B18}}</td>
+                            <td><font size="2">{{CE1}}</font></td>
+                            <td><font size="2">{{AE1}}</font></td>
+                        </tr>
+                        <tr><td><font size="2">{{B19}}</td>
+                            <td><font size="2">{{CE2}}</font></td>
+                            <td><font size="2">{{AE2}}</font></td>
+                        </tr>
+                        <tr><td><font size="2">{{B20}}</td>
+                            <td><font size="2">{{CE3}}</font></td>
+                            <td><font size="2">{{AE3}}</font></td>
+                        </tr>
+                    </tr>
+                </table>
                 <br><td><a href="{% url 'sample' %}"><font size="2">人事システムホーム画面に戻る</font></a></td>       
-                </form>
+            </form>
         {% else %}
         アクセスをお持ちでありません
         {% endif %}
