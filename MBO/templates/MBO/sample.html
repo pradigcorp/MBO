@@ -48,7 +48,12 @@
                {% if case == 1 %}<div class="box4">期を変更しました</div>{% endif %}
             </td>
          </table>
+      {% if user.username == "hyumanozaki" %}
+         <br>
+         <div style="float:left;" class="box"><a href="{% url 'test'%}">2022年度</a></div>
+      {% endif %}
       </div>
+      </form>
    </body>
 {% else %}
    アクセスをお持ちでありません

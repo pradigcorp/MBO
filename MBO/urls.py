@@ -16,6 +16,7 @@ urlpatterns = [
     path('sample',views.sample,name='sample'),
     path('homeA',views.homeA,name='homeA'),
     path('homeB',views.homeB,name='homeB'),
+    path('test',views.test,name='test'),
     path('edit/<int:num>',views.edit,name='edit'),
     path('editCPA/<int:num>',views.editCPA,name='editCPA'),
     path('editCPA2/<str:name>',views.editCPA2,name='editCPA2'),

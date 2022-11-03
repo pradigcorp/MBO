@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
+from django.core.mail import send_mail, EmailMessage
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from .models import GOAL22,CPA22,RHDT
@@ -1562,4 +1563,15 @@ def homeB(request):
         }
     return render(request, 'MBO/homeB.html', params)
 
+def test(request):
+    if (request.method == "POST"):
+        subject = "test"
+        message = "test mail"
+        from_email = "sistema.rh@cosmotec.com.br"
+        recipient_list = ["hyuma17@yahoo.co.jp"]
+        send_mail(subject, message, from_email, recipient_list)
+    params = {
+        "ID" : request.user.id
+    }
+    return render(request, 'MBO/test.html', params)
 

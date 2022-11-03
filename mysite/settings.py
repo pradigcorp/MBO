@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
+EMAIL_HOST = "smtp.office365.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "sistema.rh@cosmotec.com.br"
+EMAIL_HOST_PASSWORD = "rhsis2022"
+EMAIL_USE_TLS = True
 
 # Application definition
 
