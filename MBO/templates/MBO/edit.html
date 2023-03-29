@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <meta charset="utf-8">
     <title>{{title}}</title>
     <link rel="stylesheet" 
@@ -15,15 +16,16 @@
             {% csrf_token %}
             <table border="1" cellspacing="0">
                 <tr style="background-color: #F0F8FF;">
-                    <td style="width: 240px;"><font size="2">期初目標設定</font></td>
-                    <td style="width: 70px;"><font size="2">ウェイト%</font></td>
-                    <td style="width: 240px;"><font size="2">期中レビュー</font></td>
-                    <td style="width: 240px;"><font size="2">期末レビュー</font></td>
-                    <td style="width: 60px;"><font size="2">評価点数</font></td>
-                    <td style="width: 240px;"><font size="2">評定者コメント</font></td>
+                    <td class="goal"><font size="2">期初目標設定</font></td>
+                    <td class="goala"><font size="2">ウェイト%</font></td>
+                    <td class="goal"><font size="2">期中レビュー</font></td>
+                    <td class="goal"><font size="2">期末レビュー</font></td>
+                    <td class="goala"><font size="2">評価点数</font></td>
+                    <td class="goal"><font size="2">評定者コメント</font></td>
             </tr>
                 <tr class="edit">
-                    <td class="edit"><font size="2">{% if sbmt == 0 %}{{data1.GOAL22A1}}{% else %}{{data2.0}}{% endif %}</font></td>
+                    <td class="edit"><font size="2">{% if sbmt == 0 %}{{data1.GOAL22A1}}
+                        {% else %}<div class="pc">{{data2.0}}</div><div class="sp">詳細を見る<div class="description2">{{data2.0}}</div></div>{% endif %}</font></td>
                     <td><font size="2">{% if sbmt == 0 %}{{data1.GOAL22AP}}{% else %}{{data3.0}}{% endif %}</font></td>
                     <td><font size="2">{% if sbmt == 1 %}{{data1.GOAL22A2}}{% elif sbmt == 2 %}{{data4.0}}{% endif %}</font></td>
                     <td><font size="2">{% if sbmt == 2 %}{{data1.GOAL22A3}}{% endif %}</font></td>
