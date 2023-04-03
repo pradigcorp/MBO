@@ -1,11 +1,12 @@
 {% load static %}
 <html lang="ja" dir="ltr">
 <head>
-<meta charset="utf-8">
-<title></title>
-<link rel="stylesheet" 
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'css/MBO.css' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title></title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/MBO.css' %}">
 </head>
     <body class="container">  
         {% if user.is_authenticated %}
@@ -13,14 +14,14 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
             <form action="{% url 'GOAL3' %}" method="post">
                 <table border="1">
                     <tr>
-                        <td>氏名</td>
-                        <td>評定者</td>
-                        <td>期初目標設定完了日</td>
-                        <td>期中レビュー完了日</td>
-                        <td>期末レビュー完了日</td>
-                        <td>コンピテンシー評価<br>完了日</td>
-                        <td>目標設定レビュー</td>
-                        <td>コンピテンシー評価</td>
+                        <td class="AE3">氏名</td>
+                        <td class="AE3">評定者</td>
+                        <td class="AE4">期初目標設定完了日</td>
+                        <td class="AE4">期中レビュー完了日</td>
+                        <td class="AE4">期末レビュー完了日</td>
+                        <td class="AE4">コンピテンシー評価<br>完了日</td>
+                        <td class="AE4">目標設定レビュー</td>
+                        <td class="AE4">コンピテンシー評価</td>
                     </tr>
                     <tr>
                         <td>{{data1.1}}</td>
@@ -76,10 +77,10 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
             <br>
                 <table border="1" cellspacing="0">
                     <tr style="background-color: #F0F8FF">
-                        <td style="width: 100px;"><font size="2">コンピテンシー</font></td>
-                        <td style="width: 700px;"><font size="2">コンピテンシー詳細</font></td>
-                        <td style="width: 100px;"><font size="2">本人評価平均</font></td>
-                        <td style="width: 100px;"><font size="2">評定者評価平均</font></td>
+                        <td class="AE1"><font size="2">コンピテンシー</font></td>
+                        <td class="AE2"><font size="2">コンピテンシー詳細</font></td>
+                        <td class="AE1"><font size="2">本人評価平均</font></td>
+                        <td class="AE1""><font size="2">評定者評価平均</font></td>
                     </tr>
                     <tr>
                         <tr><td rowspan="3"><font size="2">{{B1}}</font></td>

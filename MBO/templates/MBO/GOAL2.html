@@ -1,11 +1,12 @@
 {% load static %}
 <html lang="ja" dir="ltr">
 <head>
-<meta charset="utf-8">
-<title></title>
-<link rel="stylesheet" 
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'css/MBO.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/MBO.css' %}">
 </head>
     <body class="container">  
         {% if user.is_authenticated %}
@@ -14,12 +15,12 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
                 {% csrf_token %}
                 <table border="1" cellspacing="0">
                     <tr style="background-color: #F0F8FF">
-                        <td style="width: 240px;"><font size="2">期初目標設定</font></td>
-                        <td><font size="2">ウェイト%</font></td>
-                        <td style="width: 240px;"><font size="2">期中レビュー</font></td>
-                        <td style="width: 240px;"><font size="2">期末レビュー</font></td>
-                        <td><font size="2">評価点数</font></td>
-                        <td style="width: 240px;"><font size="2">評定者コメント</font></td>
+                        <td class="goal"><font size="2">期初目標設定</font></td>
+                        <td class="goala"><font size="2">ウェイト%</font></td>
+                        <td class="goal"><font size="2">期中レビュー</font></td>
+                        <td class="goal"><font size="2">期末レビュー</font></td>
+                        <td class="goala"><font size="2">評価点数</font></td>
+                        <td class="goal"><font size="2">評定者コメント</font></td>
                     </tr>
                     <tr>
                         <td><font size="2">{{data1.0}}</font></td>
@@ -95,9 +96,9 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
                         期中レビューを確認し承認か差し戻しボタンを押下して下さい。
                     {% else %}
                         期末レビューを確認し差し戻すか、評価点数と評定者コメントを入力し承認ボタンを押下して下さい。
-                        <br>
-                        <td><a href="{% url 'edit2' name=EMP %}"><font size="2">評価点数・コメントを入力</font></a></td>
-                       {% endif %}
+                        <br><td><a href="{% url 'edit2' name=EMP %}"><font size="2">評価点数・コメントを入力</font></a></td>
+                    {% endif %}
+                    <br>
                     <tr><th><td>
                         <input type="submit" name="DL" value="ダウンロード" class="button3">
                     </td></th></tr> 

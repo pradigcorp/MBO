@@ -8,7 +8,7 @@
 </head>
 <body class="container">
 
-   <p> 
+   <h1> 
    目標設定・レビュー　評定するメンバーを選択して下さい<br><br>
    
       {% for i in data %}
@@ -20,8 +20,8 @@
             {% endif %}
          {% endif %}
       {% endfor %}
-   </p>
-   <h5><td><a href="{% url 'sample' %}">人事システムホーム画面に戻る</a></td></h5>
+   <br>
+   <td><a href="{% url 'sample' %}">人事システムホーム画面に戻る</a></td></h1>
 
 </body>
 </html>

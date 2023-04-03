@@ -1,11 +1,12 @@
 {% load static %}
 <html lang="ja" dir="ltr">
 <head>
-<meta charset="utf-8">
-<title></title>
-<link rel="stylesheet" 
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'css/MBO.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/MBO.css' %}">
 </head>
     <body class="container">  
         {% if user.is_authenticated %}
@@ -14,12 +15,12 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
                 {% csrf_token %}
                 <table border="1" cellspacing="0">
                     <tr style="background-color: #F0F8FF">
-                        <td style="width: 240px;"><font size="2">期初目標設定</font></td>
-                        <td><font size="2">ウェイト%</font></td>
-                        <td style="width: 240px;"><font size="2">期中レビュー</font></td>
-                        <td style="width: 240px;"><font size="2">期末レビュー</font></td>
-                        <td><font size="2">評価点数</font></td>
-                        <td style="width: 240px;"><font size="2">評定者コメント</font></td>
+                        <td class="goal"><font size="2">期初目標設定</font></td>
+                        <td class="goala"><font size="2">ウェイト%</font></td>
+                        <td class="goal"><font size="2">期中レビュー</font></td>
+                        <td class="goal"><font size="2">期末レビュー</font></td>
+                        <td class="goala"><font size="2">評価点数</font></td>
+                        <td class="goal"><font size="2">評定者コメント</font></td>
                     </tr>
                     <tr>
                         <td><font size="2">{{data1.0}}</font></td>

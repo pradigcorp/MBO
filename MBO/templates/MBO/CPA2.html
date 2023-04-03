@@ -1,11 +1,12 @@
 {% load static %}
 <html lang="ja" dir="ltr">
 <head>
-<meta charset="utf-8">
-<title></title>
-<link rel="stylesheet" 
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'css/MBO.css' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title></title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/MBO.css' %}">
 </head>
     <body class="container">  
         {% if user.is_authenticated %}
@@ -14,20 +15,20 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
                 {% csrf_token %}
                 <table border="1" cellspacing="0">
                     <tr style="background-color: #F0F8FF">
-                        <td style="width: 70px;"><font size="1">コンピテンシー</font></td>
-                        <td style="width: 300px;"><font size="1">コンピテンシー詳細</font></td>
-                        <td style="width: 60px;"><font size="1">本人評価</font></td>
-                        <td style="width: 60px;"><font size="1">評定者評価</font></td>
-                        <td style="width: 340px;"><font size="1">考察</font></td>
-                        <td style="width: 340px;"><font size="1">向上プラン</font></td>
-                    </tr>
+                        <td class="cpab"><font size="3">コンピテンシー</font></td>
+                        <td class="cpa"><font size="3">コンピテンシー詳細</font></td>
+                        <td class="cpaa"><div class="tooltip3"><font size="3">本人評価</font><div class="description3">3.このような行動はよく見られる<br>2.このような行動が見られることがある<br>1.このような行動はほとんど見られない</div></div></td>
+                        <td class="cpaa"><div class="tooltip3"><font size="3">評定者評価</font><div class="description3">3.このような行動はよく見られる<br>2.このような行動が見られることがある<br>1.このような行動はほとんど見られない</div></div></td>
+                        <td class="cpa"><font size="3">考察</font></td>
+                        <td class="cpa"><font size="3">向上プラン</font></td>
+                </tr>
                     <tr>
                         <tr><td rowspan="3"><font size="1">{{B1}}</font></td>
                             <td><font size="1">{{B2}}</td>
                             <td style="height: 45px;"><font size="1">{{data1.0}}</font></td>
                             <td><font size="1">{{data2.0}}</font></td>
-                            <td style="width: 320px;"><font size="1">{{data3.0}}</font></td>
-                            <td style="width: 320px;"><font size="1">{{data4.0}}</font></td></tr>
+                            <td><font size="1">{{data3.0}}</font></td>
+                            <td><font size="1">{{data4.0}}</font></td></tr>
                         </tr>
                         <tr><td><font size="1">{{B3}}</td>
                             <td style="height: 45px;"><font size="1">{{data1.1}}</font></td>

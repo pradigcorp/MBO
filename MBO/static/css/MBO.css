@@ -40,7 +40,7 @@
 .button4 {
     font-size: 10pt;
     position : absolute;
-    right: 170pt;
+    right: 180pt;
 }
 
 .button5 {
@@ -237,12 +237,50 @@ h1, h2, h3, h4 {
     left: -30px;
 }
 
-.tooltip2{
+.tooltip3{
     color: #0007FF;
     position: relative;
     cursor: pointer;
     display: inline-block;
-    font-size: 10px;
+    font-size: 15px;
+}
+.tooltip3 p{
+    margin:0;
+    padding:0;
+}
+.description3 {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 1.6em;
+    color: #fff;
+    border-radius: 5px;
+    background: #000;
+    width: 100px;
+}
+.description3:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    right: 95%;
+    border: 15px solid transparent;
+    border-top: 15px solid #000;
+    margin-left: -15px;
+    transform: rotateZ(90deg);
+}
+.tooltip3:hover .description3{
+    display: inline-block;
+    top: 0px;
+    left: 40px;
+}
+
+.tooltip2{
+    color: #0007FF;
+    position: relative;
+    cursor: pointer;
+    display: none;
+    font-size: 15px;
 }
 .tooltip2 p{
     margin:0;
@@ -259,7 +297,7 @@ h1, h2, h3, h4 {
     transform: rotateZ(0deg);
 }
 .tooltip2:hover .description2{
-    display: inline-block;
+    display: none;
     top: 0px;
     left: 40px;
 }
@@ -279,6 +317,33 @@ h1, h2, h3, h4 {
 .sp {
     display: none;
 }
+.cpa {
+    width: 250px;
+}
+.cpac {
+    width: 300px;
+}
+.cpaa{
+    width: 70px;
+}
+.cpab{
+    width: 70px;
+}
+.AE1 {
+    width: 100px;
+}
+.AE2 {
+    width: 700px;
+}
+
+.AE3 {
+    width: 70px;
+}
+.AE4 {
+    width: 140px;
+}
+
+
 @media only screen and (max-width: 480px){
     .box {
         padding: 10px;
@@ -385,7 +450,7 @@ h1, h2, h3, h4 {
     .pc {
         display: none;
     }
-    .sp {
+    .tooltip2 {
         display: inline-block;
         color: #0007FF;
         position: relative;
@@ -395,12 +460,56 @@ h1, h2, h3, h4 {
         display: none;
         position: absolute;
         padding: 10px;
-        font-size: 12px;
+        font-size: 20px;
         line-height: 1.6em;
         color: #fff;
         border-radius: 5px;
         background: #000;
-        width: 300px;
+        width: 150px;
+        z-index: 3;
     }
-        
+    .tooltip2 p{
+        margin:0;
+        padding:0;
+    }
+    .description2:before {
+        content: "";
+        position: absolute;
+        top: 0%;
+        right: 95%;
+        border: 15px solid transparent;
+        border-top: 15px solid #000;
+        margin-left: -15px;
+        transform: rotateZ(90deg);
+    }
+    .tooltip2:hover .description2{
+        display: inline-block;
+        top: 0px;
+        left: 40px;
+    }
+    .cpa {
+        width: 30%;
+    }
+    .cpaa {
+        width: 2%;
+    }
+    .cpab {
+        width: 5%;
+    }
+    .cpac {
+        width: 5%;
+    }
+    .AE1 {
+        width: 9%;
+    }
+    .AE2 {
+        width: 64%px;
+    }    
+    .AE3 {
+        width: 7%;
+    }
+    .AE4 {
+        width: 14%;
+    }
+    
 }
