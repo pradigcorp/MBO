@@ -374,6 +374,7 @@ h1, h2, h3, h4 {
         top : 5px;
     }
     .sample{
+        display: none;
         position: absolute;
         margin-left: 10px;
         top: 40%;

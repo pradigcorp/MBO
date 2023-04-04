@@ -10,7 +10,7 @@
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/MBO.css' %}">   
 </head>
-<body class="container">  
+<body class="container" ontouchstart="">  
     {% if user.is_authenticated %}
         <form action="{% url 'edit2' name=EMP %}" method="post">
             <p class="middle"><font color="blue">{{FN}}{{LN}}</font>さんの目標設定・レビュー</p>

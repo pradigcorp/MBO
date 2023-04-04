@@ -8,7 +8,7 @@
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/MBO.css' %}">
 </head>
-    <body class="container">  
+    <body class="container" ontouchstart="">  
         {% if user.is_authenticated %}
             <form action="{% url 'CPA3' name=EMP %}" method="post">
                 <p class="middle"><font color="blue">{{FN}}&nbsp;{{LN}}</font>さんのコンピテンシー評価 （評定者:<font color="blue">{{FN2}}&nbsp;{{LN2}}さん</font>）</p>                
