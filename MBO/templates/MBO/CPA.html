@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/MBO.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 </head>
-    <body class="container">  
+    <body class="container" ontouchstart="">  
         {% if user.is_authenticated %}
             <form action="{% url 'CPA' %}" method="post">
                 <p class="middle"><font color="blue">{{FN}}{{LN}}</font>さんのコンピテンシー評価 
@@ -17,7 +17,7 @@
                 <table border="1" cellspacing="0">
                     <tr style="background-color: #F0F8FF">
                         <td class="cpab"><font size="3">コンピテンシー</font></td>
-                        <td class="cpac"><font size="3">コンピテンシー詳細</font></td>
+                        <td class="cpa"><font size="3">コンピテンシー詳細</font></td>
                         <td class="cpaa"><div class="tooltip3"><font size="3">本人評価</font><div class="description3">3.このような行動はよく見られる<br>2.このような行動が見られることがある<br>1.このような行動はほとんど見られない</div></div></td>
                         <td class="cpaa"><font size="3">評定者評価</font></td>
                         <td class="cpa"><font size="3">考察</font></td>
